@@ -16,3 +16,5 @@ app.use(bodyParser.json());
 app.listen(PORT, function() {
     console.log("Listening on PORT " + PORT);
 });
+
+module.exports = app;
