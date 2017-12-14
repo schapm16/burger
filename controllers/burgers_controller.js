@@ -4,22 +4,26 @@ var router = express.Router();
 var burger = require('../models/burger.js');
 
 router.get('/', function(req, res) {
-  burger.viewAll(function() {
-    
-  })  
+  console.log('GET received');
+  burger.viewAll(function(data) {
+  res.render('index', {burgerData: data});  
+  });  
 });
 
 
 router.post('/', function(req, res) {
-  burger.new(burgerName, function() {
-    
+  console.log('POST received');
+  console.log(req.body);
+  burger.new(req.body.newBurger, function(data) {
+    console.log(data);
+  res.render('index', {burgerData: data});
   });
 });
 
 router.put('/', function(req, res) {
-  burger.devour(burgerName, function() {
+  // burger.devour(burgerName, function(data) {
     
-  });
+  // });
 });
 
 module.exports = router;

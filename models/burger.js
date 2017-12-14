@@ -12,6 +12,6 @@ var burger = {
     devour: function(burgerName, cb) {
         orm.updateOne(burgerName, cb);
     }
-    
-    
-}
+};
+
+module.exports = burger;

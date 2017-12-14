@@ -3,18 +3,18 @@
 
   <div class="row">
     <div class="col-s4 offset-s2">
-      {{#each burgers}}
-        {{#unless devoured}}
-          <span>{{burger.name}}</span>
-          <button id = "{{burger.name}}" type = "button">Devour</button>
+      {{#each burgerData}}
+        {{#unless burger.devoured}}
+          <span>{{burger_name}}</span>
+          <button id = "{{burger_name}}" type = "button">Devour</button>
         {{/unless}}
       {{/each}}
     </div>
     
     <div class="col-s4">
-      {{#each }}
+      {{#each burgerData}}
         {{#if devoured}}
-          <span>{{burger.name}}</span>
+          <span>{{burger_name}}</span>
         {{/if}}
       {{/each}}
     </div>
