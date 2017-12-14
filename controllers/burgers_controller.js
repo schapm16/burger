@@ -16,14 +16,17 @@ router.post('/', function(req, res) {
   console.log(req.body);
   burger.new(req.body.newBurger, function(data) {
     console.log(data);
-  res.render('index', {burgerData: data});
+    res.render('index', {burgerData: data});
   });
 });
 
 router.put('/', function(req, res) {
-  // burger.devour(burgerName, function(data) {
-    
-  // });
+  console.log('PUT received');
+  console.log(req.body);
+  burger.devour(req.body.updateBurger, function(data) {
+    console.log(data);
+    res.render('index', {burgerData: data});
+  });
 });
 
 module.exports = router;
