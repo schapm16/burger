@@ -7,7 +7,6 @@ router.get('/', function(req, res) {
   console.log("GET");
   burger.viewAll(function(data) {
   res.render('index', {burgerData: data});  
-  
   console.log(data);
   });  
 });
@@ -18,7 +17,6 @@ router.post('/', function(req, res) {
   console.log("Request Body: " + req.body.newBurger);
   burger.new(req.body.newBurger, function(data) {
     res.status(200).end();
-    
     console.log(data);
   });
 });
@@ -28,7 +26,6 @@ router.put('/', function(req, res) {
   burger.devour(parseInt(req.body.updateBurger), function(data) {
     res.status(200).end();
     console.log(data);
-    
   });
 });
 
