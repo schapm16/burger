@@ -12,11 +12,10 @@ var orm = {
       modelCB();
     });
   },
-  updateOne: function(burgerName, modelCB) {
-    connection.query('UPDATE burgers SET devoured=true WHERE burger_name = ?', [burgerName], function(err, data) {
+  updateOne: function(burgerId, modelCB) {
+    connection.query('UPDATE burgers SET devoured=true WHERE id = ?', [burgerId], function(err, data) {
       modelCB();  
     });
-    
   }
 
 };

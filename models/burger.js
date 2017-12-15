@@ -15,9 +15,10 @@ var burger = {
         });
     },
 
-    devour: function(burgerName, ctrlCB) {
-        orm.updateOne(burgerName, function() {
+    devour: function(burgerId, ctrlCB) {
+        orm.updateOne(burgerId, function() {
             orm.selectAll(function (data) {
+                console.log(data);
                 ctrlCB(data);
             });
         });
